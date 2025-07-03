@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyDrugs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="logo">
+            MyDrugs
+            <img class="logo-img" src="./img/Barnabe.webp" alt="Seu personagem" />
+        </h1>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="./entrega.html">Entrega</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Farm de qualidade, sem riscos.</h2>
+      <p>Para cada 300 unidades de LSD, você receberá uma farm contendo os seguintes itens:</p>
+        <p id="farms">60 Embalagens Plásticas</p>
+        <p id="farms">150 Folhas de Papel</p>
+        <p id="farms">120 Metileno</p>
+        <p id="farms">120 Efedrina</p>
+    </section>
+
+    <section id="products" class="products">
+      <div class="product">
+        <img src="./img/lsd.png" alt="LSD" />
+        <h3>300x LSD</h3>
+        <p>$25.000,00</p>
+        <p id="real">R$20,00</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product">
+        <img src="./img/lsd.png" alt="LSD" />
+        <h3>600x LSD</h3>
+        <p>$45.000,00</p>
+        <p id="real">R$35,00</p>
+        <button>Comprar</button>
+      </div>
+      <div class="product">
+        <img src="./img/lsd.png" alt="LSD" />
+        <h3>900x LSD</h3>
+        <p>$75.000,00</p>
+        <p id="real">R$60,00</p>
+        <button>Comprar</button>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <p>&copy; Desenvolvido por: Barnabé DuBirimbolo --- TELEFONE(game): 281-761</p>
+    </footer>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h3 id="modalProductName">* PRODUTO *</h3>
+            <label for="cityId">ID na cidade</label>
+            <input type="text" id="cityId" placeholder="Ex: 1293">
+            <label for="cityPhone">Telefone da cidade</label>
+            <input type="text" id="cityPhone" placeholder="123-456">
+            <button onclick="closeModal()">Enviar</button>
+        </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

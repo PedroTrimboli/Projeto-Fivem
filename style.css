@@ -1,0 +1,304 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0a0a0a;
+  color: #eaeaea;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.terminal {
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffff55;
+}
+
+.typing {
+  color: #00ffcc;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ffcc;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #00ffcc; }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 0;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff88;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff88;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #b983ff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff4db8;
+}
+
+.hero {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  color: #ff4db8;
+  text-shadow: 0 0 10px #ff4db866;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.hero #farms {
+  margin-bottom: 0rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff88;
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.product {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 0 15px #00ffff33;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffffaa;
+}
+
+.product img {
+  width: 25%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff88;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h3 {
+  color: #7fe0ff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px #7fe0ff99;
+}
+
+.product p {
+  color: #ccc;
+}
+
+.product #real {
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: #00ffff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #00ffff66;
+}
+
+button:hover {
+  background-color: #b983ff;
+  color: #fff;
+  box-shadow: 0 0 15px #b983ffaa;
+}
+
+footer {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 0.9rem;
+  color: #666;
+  border-top: 1px solid #222;
+  padding-top: 2rem;
+  opacity: 0.7;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  display: none;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative; /* ESSENCIAL pro botão ficar dentro do card */
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #00ffff77;
+  color: #eaeaea;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  width: 100%;
+  background-color: #00ffff;
+  color: #000;
+  padding: 0.7rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #b983ff;
+  color: #fff;
+}
+
+.modal-content button {
+  all: unset;
+  all: initial;
+  padding: 0.4rem 1.2rem;
+  background-color: #00ffff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* alinha o botão à direita */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #b983ff;
+  color: #fff;
+}
+
+#modalProductName {
+  text-align: center;
+  margin-bottom: 1rem; /* Espaço abaixo do título */
+  color: #7fe0ff;       /* Opcional: cor parecida com seu tema */
+  text-shadow: 0 0 8px #7fe0ff99;
+}
