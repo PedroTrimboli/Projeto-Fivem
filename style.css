@@ -126,10 +126,16 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-.hero #farms {
+.hero #top-clientes {
   margin-bottom: 0rem;
   color: #00ffff;
-  text-shadow: 0 0 10px #00ffff88;
+  text-shadow: 0 0 10px #ff4db8;
+}
+
+.number-bold {
+  margin-bottom: 0rem;
+  color: #ff4db8;
+  text-shadow: 0 0 10px #ff4db8;
 }
 
 .products {
